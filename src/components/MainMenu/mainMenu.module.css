@@ -1,0 +1,18 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu__link {
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(61, 30, 197);
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.menu__link:global(.active) {
+  color: rgb(241, 238, 7);
+  background-color: rgba(30, 130, 197, 0.8);
+}
