@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { getMovieById } from 'service/apiFilms';
 import Loader from 'components/Loader/Loader';
 import css from './movieDetails.module.css';
+import noImage from '../../images/no-image.gif';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -46,7 +47,7 @@ const MovieDetails = () => {
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                : 'noImage'
+                : noImage
             }
             alt="title"
             width="350"
