@@ -1,11 +1,8 @@
-// import css from './moviesPage.module.css';
-// import { useState } from 'react';
-// import { useEffect } from 'react';
-
+import MoviesSearch from 'components/Movies/MoviesSearch/MoviesSearch';
 const MoviesPage = () => {
   return (
     <div>
-      <h1>Movies</h1>
+      <MoviesSearch />
     </div>
   );
 };

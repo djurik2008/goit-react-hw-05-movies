@@ -1,0 +1,7 @@
+.movieContainer {
+  display: flex;
+}
+
+.movieDescr {
+  width: 300px;
+}
