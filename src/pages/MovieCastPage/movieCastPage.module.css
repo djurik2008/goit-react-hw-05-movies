@@ -1,6 +1,7 @@
 /* Основні стилі для списку акторів */
 .castList {
   list-style: none;
+  margin-top: 20px;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
