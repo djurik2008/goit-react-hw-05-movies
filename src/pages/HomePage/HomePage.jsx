@@ -28,16 +28,12 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <div className={css.moviesContainer}>
       {error && <p className={css.error}>{error}</p>}
-      {loading && (
-        <div className={css.loader}>
-          <Loader />
-        </div>
-      )}
+      {loading && <Loader />}
       {films && (
         <>
-          <h1>Trending today</h1>
+          <h1 className={css.heading}>Trending today:</h1>
           <MoviesList items={films} />
         </>
       )}

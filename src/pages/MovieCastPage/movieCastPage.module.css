@@ -1,0 +1,55 @@
+/* Основні стилі для списку акторів */
+.castList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Стилі для окремого актора */
+.castItem {
+  width: 250px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.castItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Стилі для зображення актора */
+.castImage {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Стилі для інформації про актора */
+.castInformation {
+  padding: 10px;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Стилі для тексту помилки */
+.error {
+  color: #d9534f;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Стилі для контейнера завантаження */
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}

@@ -26,6 +26,8 @@ const SearchForm = ({ onSubmit }) => {
     });
   };
 
+  const PATTERN = '[A-Za-z0-9]{1,15}';
+
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <button type="submit" className={css.button}>
@@ -39,6 +41,7 @@ const SearchForm = ({ onSubmit }) => {
         autoFocus
         placeholder="Search movie"
         onChange={handleChange}
+        pattern={PATTERN}
         value={state.search}
         name="search"
         required

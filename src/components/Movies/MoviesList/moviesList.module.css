@@ -1,0 +1,46 @@
+/* Основні стилі для списку фільмів */
+.moviesList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Стилі для окремого елемента списку фільмів */
+.movieListItem {
+  width: 250px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movieListItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Стилі для посилання на фільм */
+.movieLink {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.movieLink:hover {
+  color: #3498db;
+}
+
+/* Стилі для рейтингу фільму */
+.rating {
+  margin: 5px 0;
+  color: #666;
+  font-size: 16px;
+}

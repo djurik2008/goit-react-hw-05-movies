@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getSearchMovie } from 'service/apiFilms';
 import MoviesList from '../MoviesList/MoviesList';
 import SearchForm from '../SearchForm/SearchForm';
@@ -7,9 +8,12 @@ import css from './moviesSearch.module.css';
 
 const MoviesSearch = () => {
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState('');
+  //   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get('search') ?? '';
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -29,10 +33,10 @@ const MoviesSearch = () => {
   }, [search]);
 
   const handleSearch = ({ search: word }) => {
-    if (word === search) {
+    if (search === word) {
       return;
     }
-    setSearch(word);
+    setSearchParams({ search: word });
     setMovies([]);
   };
 
@@ -40,11 +44,7 @@ const MoviesSearch = () => {
     <>
       <SearchForm onSubmit={handleSearch} />
       {error && <p className={css.error}>{error}</p>}
-      {loading && (
-        <div className={css.loader}>
-          <Loader />
-        </div>
-      )}
+      {loading && <Loader />}
       {movies && (
         <div>
           <MoviesList items={movies} />

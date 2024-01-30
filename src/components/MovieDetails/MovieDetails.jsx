@@ -1,4 +1,11 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import {
+  useParams,
+  useNavigate,
+  useLocation,
+  Link,
+  Outlet,
+} from 'react-router-dom';
+
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'service/apiFilms';
 import Loader from 'components/Loader/Loader';
@@ -11,6 +18,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -28,36 +36,41 @@ const MovieDetails = () => {
   }, [id]);
 
   const { poster_path, title, overview } = movie;
-  const goBack = () => navigate(-1);
+  const from = location.state?.from || '/';
+
+  const goBack = () => navigate(from);
 
   return (
-    <div>
+    <div className={css.movieDetailsContainer}>
       {error && <p className={css.error}>{error}</p>}
-      {loading && (
-        <div className={css.loader}>
-          <Loader />
-        </div>
-      )}
-      <button type="button" onClick={goBack}>
+      {loading && <Loader />}
+      <button type="button" onClick={goBack} className={css.goBackButton}>
         Go back
       </button>
       {movie && (
         <div className={css.movieContainer}>
           <img
+            className={css.moviePoster}
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w500/${poster_path}`
                 : noImage
             }
             alt="title"
-            width="350"
           />
           <div className={css.movieDescr}>
-            <h2>{title}</h2>
-            <p>{overview}</p>
+            <h2 className={css.movieTitle}>{title}</h2>
+            <p className={css.movieOverview}>{overview}</p>
           </div>
         </div>
       )}
+      <Link to="cast" state={{ from }} className={css.link}>
+        Cast
+      </Link>
+      <Link to="reviews" state={{ from }} className={css.link}>
+        Reviews
+      </Link>
+      <Outlet />
     </div>
   );
 };

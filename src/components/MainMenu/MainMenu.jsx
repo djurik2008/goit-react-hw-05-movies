@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const MainMenu = () => {
   return (
-    <nav>
+    <nav className={css.navigation}>
       <ul className={css.menu}>
         <li>
           <NavLink className={css.menu__link} to="/">

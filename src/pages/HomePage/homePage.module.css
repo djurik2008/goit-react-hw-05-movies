@@ -1,0 +1,21 @@
+/* Основні стилі для контейнера фільмів */
+.moviesContainer {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для тексту помилки */
+.error {
+  color: #d9534f;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Стилі для заголовка фільмів */
+.heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}

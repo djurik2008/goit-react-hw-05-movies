@@ -1,7 +1,70 @@
-.movieContainer {
-  display: flex;
+/* Основні стилі для контейнера деталей фільму */
+.movieDetailsContainer {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.movieDescr {
-  width: 300px;
+/* Стилі для тексту помилки */
+.error {
+  color: #d9534f;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Стилі для кнопки "Go back" */
+.goBackButton {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.goBackButton:hover {
+  background-color: #2980b9;
+}
+
+/* Стилі для контейнера фільму */
+.movieContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* Стилі для постера фільму */
+.moviePoster {
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Стилі для назви фільму */
+.movieTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Стилі для огляду фільму */
+.movieOverview {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Стилі для посилань на Cast та Reviews */
+.link {
+  display: inline-block;
+  margin-right: 10px;
+  color: #3498db;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #2980b9;
 }
