@@ -6,7 +6,7 @@ import {
   Outlet,
 } from 'react-router-dom';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { getMovieById } from 'service/apiFilms';
 import Loader from 'components/Loader/Loader';
 import css from './movieDetails.module.css';
@@ -70,7 +70,9 @@ const MovieDetails = () => {
       <Link to="reviews" state={{ from }} className={css.link}>
         Reviews
       </Link>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

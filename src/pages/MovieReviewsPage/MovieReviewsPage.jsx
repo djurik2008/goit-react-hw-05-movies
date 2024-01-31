@@ -39,6 +39,11 @@ const MovieReviewsPage = () => {
       {error && <p className={css.error}>{error}</p>}
       {loading && <Loader />}
       {reviews && <ul className={css.reviewsList}>{reviewsList}</ul>}
+      {reviews?.length ? (
+        <ul className={css.reviewsList}>{reviewsList}</ul>
+      ) : (
+        <p className={css.reviewContent}>There are no reviews</p>
+      )}
     </div>
   );
 };

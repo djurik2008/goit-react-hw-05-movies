@@ -40,6 +40,7 @@
 .moviePoster {
   border-radius: 8px;
   margin-right: 20px;
+  width: 250px;
 }
 
 /* Стилі для назви фільму */
